@@ -1,0 +1,30 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#title {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#game-board {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.card {
+  margin: 1rem;
+}
