@@ -11,8 +11,8 @@ $(function () {
         id: `${j}${i}`,
         class: 'card',
         title: 'card ' + i,
-        text: 'im a card',
-        isShown: false,
+        text: 'cardhidden',
+        properties: { isShown: false },
         on: {
           click: function (e) {
             flipCard(e.target.id);
@@ -25,9 +25,13 @@ $(function () {
 
   flipCard = function (id) {
     const $card = $('#' + id);
-    $card.html('cardshown');
+    if ($card.prop('isShown')) {
+      $card.html('cardhidden');
+      $card.prop('isShown', !$card.prop('isShown'));
+    } else {
+      $card.html('cardshown');
+      $card.prop('isShown', !$card.prop('isShown'));
+    }
     //toggles the isShown prop back and forth
-    $card.prop('isShown', !$card.prop('isShown'));
-    console.log($card.attr('isShown'));
   };
 });
